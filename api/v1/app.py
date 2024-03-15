@@ -9,7 +9,7 @@ app.register_blueprint(app_views)
 
 
 
-@app.route('@app.teardown_appcontext')
+@app.teardown_appcontext
 def close_db():
     """ closes db """
     return storage.close()
