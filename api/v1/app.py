@@ -1,5 +1,5 @@
 #!/bin/usr/python3
-""" simple single server """
+""" initializes Flask application """
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
