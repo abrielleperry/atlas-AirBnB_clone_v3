@@ -2,6 +2,8 @@
 """ retruns json response status of API """
 from flask import Flask, jsonify
 from api.v1.views import app_views
+from models import storage
+
 
 
 @app_views.route('/status')
@@ -10,10 +12,10 @@ def status():
     return jsonify({"status":"OK"})
 
 @app_views.route('/api/v1/stats')
-def close_db():
-    """ closes db """
-    return storage.close()
-
+def get_number_objects():
+    """ returns number of each object by types """
+    number_objects = storage.count()
+    return jsonify(number_objects)
 
 
 if __name__ == '__main__':
